@@ -11,3 +11,12 @@ npm i espress
 
 npm i serialport@latest 
 
+find the serial port:
+
+$ dmesg | grep tty
+
+see its permissions:
+
+ls -lh /dev/ttyUSB0
+
+sudo chmod 666 /dev/ttyUSB0
