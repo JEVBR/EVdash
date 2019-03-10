@@ -19,4 +19,6 @@ see its permissions:
 
 ls -lh /dev/ttyUSB0
 
+set the permission:
+
 sudo chmod 666 /dev/ttyUSB0
