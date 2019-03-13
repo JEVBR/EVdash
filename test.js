@@ -30,19 +30,20 @@ app.use("/",router);
 app.use(express.static(__dirname + '/public'));
 
 port.on('data', function (data) {
-          console.log(data);
+     //  console.log(data);
 //  if(flag_V == 0) validateData(data) ;
   //else{
   	str += data;
-
-  	if(str.includes("!")){
+	//console.log(str);
+		if(str.includes("!")){
+		console.log(str);		
   		myPrint(str);
   		count = 0;
   		io.emit('chat message', str);	//send msg to web interface.
   		str=""
   		flag_V = 0;
   		no_pkt++;
-  		console.log("data number :" + no_pkt);
+  		//console.log("data number :" + no_pkt);
   	}
   	count++;
   //}
