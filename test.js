@@ -9,8 +9,8 @@ var path = __dirname + '/';
 var io = require('socket.io')(http);
 var router = express.Router();
 var SerialPort = require('serialport'); /*Serial Port Intitiate*/
-//var port = new SerialPort("/dev/ttyACM0", { // DELL
-var port = new SerialPort("/dev/ttyUSB0", {	 // PI3	
+var port = new SerialPort("/dev/ttyACM0", { // DELL
+//var port = new SerialPort("/dev/ttyUSB0", {	 // PI3
   baudRate: 115200,
   bufferSize: 1 ,
   rtscts: true ,
@@ -30,7 +30,7 @@ app.use("/",router);
 app.use(express.static(__dirname + '/public'));
 
 port.on('data', function (data) {
-          console.log(data);
+  //console.log("--- " + data + " +++");
 //  if(flag_V == 0) validateData(data) ;
   //else{
   	str += data;
@@ -39,10 +39,11 @@ port.on('data', function (data) {
   		myPrint(str);
   		count = 0;
   		io.emit('chat message', str);	//send msg to web interface.
+      console.log(str);
   		str=""
   		flag_V = 0;
   		no_pkt++;
-  		console.log("data number :" + no_pkt);
+  		//console.log("data number :" + no_pkt);
   	}
   	count++;
   //}
