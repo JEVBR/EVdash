@@ -25,7 +25,7 @@ socket.on('chat message', function (msg){
     y[0] = [];
     speed = res[13]; // this is actualy mech.RPM
     voltPct = res[8];
-    mAmps = res[5];
+    mAmps = 123;
     bAmps = 123
     throttle = res[9];
     Iq = res[2];

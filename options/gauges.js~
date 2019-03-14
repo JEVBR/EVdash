@@ -215,7 +215,7 @@ var throttleOptions =  {
 var IqOptions =  {
     yAxis: {
         min: 0,
-        max: 1000,
+        max: 4096,
         title: {
             text: 'Iq'
         }
@@ -239,7 +239,7 @@ var IqOptions =  {
 var IdOptions =  {
     yAxis: {
         min: 0,
-        max: 1000,
+        max: 4096,
         title: {
             text: 'Id'
         }
@@ -263,7 +263,7 @@ var IdOptions =  {
 var IqRefOptions =  {
     yAxis: {
         min: 0,
-        max: 1000,
+        max: 4096,
         title: {
             text: 'IqRef'
         }
@@ -287,7 +287,7 @@ var IqRefOptions =  {
 var IdRefOptions =  {
     yAxis: {
         min: 0,
-        max: 1000,
+        max: 4096,
         title: {
             text: 'IdRef'
         }
