@@ -49,7 +49,7 @@ port.on('data', (data) => {
   }
 });
 
-const sendSerial(data) => {
+const sendSerial = (data) => {
   port.write(data);
   console.log(data);
 };
