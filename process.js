@@ -62,8 +62,8 @@ function reload(){
   //battery.series[0].setData(batt_temp);
   point = chartRpm.series[0].points[0].update( (parseInt(speed)));
   point = chartVoltPct.series[0].points[0].update( (parseInt(voltPct)));
-  point = chartMotorAmps.series[0].points[0].update( (parseInt(mAmps)));
-  point = chartBatteryAmps.series[0].points[0].update( (parseInt(bAmps)));
+  point = chartMotorAmps.series[0].points[0].update( (parseInt(mAmps))/4);
+  point = chartBatteryAmps.series[0].points[0].update( (parseInt(bAmps))/4);
   point = chartThrottlePct.series[0].points[0].update( (parseInt(throttle)));
   point = chartId.series[0].points[0].update( (parseInt(Id)));
   point = chartIq.series[0].points[0].update( (parseInt(Iq)));
