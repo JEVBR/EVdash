@@ -23,5 +23,10 @@
     "keypress": "^0.2.1",
     "serialport": "^7.1.4",
     "socket.io": "^1.7.4"
+  },
+  "devDependencies": {
+    "eslint": "^5.15.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
   }
 }

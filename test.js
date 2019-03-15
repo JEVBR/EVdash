@@ -1,100 +1,77 @@
 /*
-NODE js library handler to get data from serial ports and push them to the websockets and display in GUI
+  NODE js library handler to get data from serial ports and push
+  them to the websockets and display in GUI
 */
-var keypress = require('keypress');
-var express = require("express");
-var app = express();
-var http = require('http').Server(app);
-var path = __dirname + '/';
-var io = require('socket.io')(http);
-var router = express.Router();
-var SerialPort = require('serialport'); /*Serial Port Intitiate*/
-//var port = new SerialPort("/dev/ttyACM0", { // DELL
-var port = new SerialPort("/dev/ttyUSB0", {	 // PI3
+const keypress = require('keypress');
+
+const express = require('express');
+
+const app = express();
+
+const http = require('http').Server(app);
+
+const path = __dirname + '/';
+
+const io = require('socket.io')(http);
+
+const SerialPort = require('serialport');
+
+const router = express.Router();
+
+const port = new SerialPort('/dev/ttyACM0', { // DELL
+// let port = new SerialPort("/dev/ttyUSB0", { // PI3
   baudRate: 115200,
-  bufferSize: 1 ,
-  rtscts: true ,
+  bufferSize: 1,
+  rtscts: true,
 });
 
-var str = "";
-var count=0;
-var no_pkt = 0;
-var flag_V = 0; /*Validation Flag*/
+let str = '';
+
 // test
-/*Socket IO*/
-router.use("/",function(req,res){
-  console.log (req.url);
-  res.sendFile(path + req.url);
-});
-app.use("/",router);
+/* Socket IO */
+router.use('/', (req, res) => { res.sendFile(path + req.url); });
+app.use('/', router);
 app.use(express.static(__dirname + '/public'));
 
-port.on('data', function (data) {
-     //  console.log(data);
-//  if(flag_V == 0) validateData(data) ;
-  //else{
-  	str += data;
-	//console.log(str);
-		if(str.includes("!")){
-		console.log(str);
-  		myPrint(str);
-  		count = 0;
-  		io.emit('chat message', str);	//send msg to web interface.
-  		str=""
-  		flag_V = 0;
-  		no_pkt++;
-  		//console.log("data number :" + no_pkt);
-  	}
-  	count++;
-  //}
-
+port.on('data', (data) => {
+  // console.log(data);
+  // if(flag_V == 0) validateData(data) ;
+  // else{
+  str += data;
+  // console.log(str);
+  if (str.includes('!')) {
+    port.flush();
+    console.log(str);
+    io.emit('chat message', str); // send msg to web interface.
+    str = '';
+  }
 });
 
-io.on('connection', function(socket){
-    console.log('User connected'); // this will print when users are connected
-    socket.on('chat message', function(msg){
+io.on('connection', (socket) => {
+  console.log('User connected'); // this will print when users are connected
+  socket.on('chat message', (msg) => { });
 
-    });
-    socket.on('disconnect', function(data) {
-        console.log('-----------------disconnected the socket!-------------');
-    });
+  socket.on('disconnect', (data) => {
+    console.log('-----------------disconnected the socket!-------------');
+  });
 });
 
-/*Create http server*/
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
-});
+/* Create http server */
+app.get('/', (req, res) => { res.sendFile(__dirname + '/index.html'); });
 
-http.listen(3000, function(){
+http.listen(3000, () => {
   console.log('listening on :3000');
   console.log('--------------------Server Started---------------------------');
 });
-
-// these functions are for data validation
-
-function myPrint(data) {
-	var i;
- 	//console.log('Data: ' + data);
-}
-// this function will validate data
-function validateData(x){
-	if(x != "#"){
-		port.flush();
-	}else if( x == "#"){
-		flag_V=1;
-		//console.log("Validated");
-	}
-}
 
 // make `process.stdin` begin emitting "keypress" events
 keypress(process.stdin);
 
 // listen for the "keypress" event
-process.stdin.on('keypress', function (ch, key) {
+process.stdin.on('keypress', (ch, key) => {
   console.log('got "keypress"', key);
   io.close(); // Close current server
-  return process.exit("blaaa");
+  return process.exit('exit');
 });
 
 process.stdin.setRawMode(true);
-
