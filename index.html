@@ -25,45 +25,39 @@
             <div id="container1" class="outergauge"></div>
             <div id="container2" class="outergauge"></div>
             <div id="container3" class="outergauge"></div>
+            <form id = "form" action = "">
+              <input type="text" id="Input"><br>
+              <div><input type="button" id="sendbutton" onclick="sendCommand()"></div>
+            </form>
     </main>
     <main class= container>
-
-
             <div id="container4" class="outerbullets"></div>
             <div id="container5" class="outerbullets"></div>
             <div id="container6" class="outerbullets"></div>
             <div id="container7" class="outerbullets"></div>
     </main>
     <main class= container>
-
-
-
-
             <div id="container8" class="outerbullets"></div>
             <div id="container9" class="outerbullets"></div>
-
     </main>
     <main class= container>
-
           <div><textarea rows="20"  id="msg1"> </textarea></div>
           <div><input type="checkbox" id="myCheck" onclick="swapTextArea()"></div>
           <div><textarea rows="20" id="msg2"> </textarea></div>
-
-
     </main>
 
     <script type="text/javascript">
 
     // var battery = Highcharts.chart('battery_chart', batteryOptions);
-    var chartRpm = Highcharts.chart('container1', Highcharts.merge(gaugeOptions, rpmOptions));
-    var chartVoltPct = Highcharts.chart('container2', Highcharts.merge(gaugeOptions, pctOptions));
-    var chartMotorAmps = Highcharts.chart('container3', Highcharts.merge(gaugeOptions, mAmpsOptions));
-    var chartBatteryAmps = Highcharts.chart('container4', Highcharts.merge(bulletOptions, bAmpsOptions));
-    var chartThrottlePct = Highcharts.chart('container5', Highcharts.merge(bulletOptions, throttleOptions));
-    var chartId = Highcharts.chart('container6', Highcharts.merge(bulletOptions, IdOptions));
-    var chartIq = Highcharts.chart('container7', Highcharts.merge(bulletOptions, IqOptions));
-    var chartIdRef = Highcharts.chart('container8', Highcharts.merge(bulletOptions, IqRefOptions));
-    var chartIqRef = Highcharts.chart('container9', Highcharts.merge(bulletOptions, IqRefOptions));
+const chartRpm = Highcharts.chart('container1', Highcharts.merge(gaugeOptions, rpmOptions));
+const chartVoltPct = Highcharts.chart('container2', Highcharts.merge(gaugeOptions, pctOptions));
+const chartMotorAmps = Highcharts.chart('container3', Highcharts.merge(gaugeOptions, mAmpsOptions));
+const chartBatteryAmps = Highcharts.chart('container4', Highcharts.merge(bulletOptions, bAmpsOptions));
+const chartThrottlePct = Highcharts.chart('container5', Highcharts.merge(bulletOptions, throttleOptions));
+const chartId = Highcharts.chart('container6', Highcharts.merge(bulletOptions, IdOptions));
+const chartIq = Highcharts.chart('container7', Highcharts.merge(bulletOptions, IqOptions));
+const chartIdRef = Highcharts.chart('container8', Highcharts.merge(bulletOptions, IqRefOptions));
+const chartIqRef = Highcharts.chart('container9', Highcharts.merge(bulletOptions, IqRefOptions));
 //  unsigned int dataToDisplaySet1;
   // 0bit 15 set: display myDataStream.timer
   // 1Bit 14 set: display myDataStream.Id_times10

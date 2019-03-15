@@ -20,7 +20,7 @@ const SerialPort = require('serialport');
 const router = express.Router();
 
 const port = new SerialPort('/dev/ttyACM0', { // DELL
-// let port = new SerialPort("/dev/ttyUSB0", { // PI3
+// const port = new SerialPort("/dev/ttyUSB0", { // PI3
 
   baudRate: 115200,
   bufferSize: 1,
@@ -49,12 +49,22 @@ port.on('data', (data) => {
   }
 });
 
+io.on('CMD', (data) => {
+  console.log(data);
+});
+
 io.on('connection', (socket) => {
   console.log('User connected'); // this will print when users are connected
-  socket.on('chat message', (msg) => { });
+  socket.on('chat message', (msg) => {
+    console.log(msg);
+  });
 
   socket.on('disconnect', (data) => {
     console.log('-----------------disconnected the socket!-------------');
+  });
+
+  socket.on('CMD', (data) => {
+    console.log(data);
   });
 });
 

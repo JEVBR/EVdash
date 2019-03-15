@@ -52,7 +52,13 @@ const addToTextarea = ($ta, text) => {
   $ta.val(t.join('\n')).scrollTop($ta[0].scrollHeight);
 };
 
-const swapTextArea = () => { swapTxt = !swapTxt;  };
+const sendCommand = () => {
+  const data = document.getElementById('Input');
+  socket.emit('CMD', data.value);
+  data.value="";
+};
+
+const swapTextArea = () => { swapTxt = !swapTxt; };
 
 function reload(){
   //battery.series[0].setData(batt_temp);
@@ -65,8 +71,5 @@ function reload(){
   point = chartIq.series[0].points[0].update( (parseInt(Iq)));
   point = chartIdRef.series[0].points[0].update( (parseInt(IdRef)));
   point = chartIqRef.series[0].points[0].update( (parseInt(IqRef)));
-
-
 }
-setInterval(reload, 100);
-
+setInterval(reload, 1000);
