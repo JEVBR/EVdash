@@ -1,27 +1,26 @@
- var batt_temp;
- var y = [];
- var speed;
- var voltPct;
- var mAmps;
- var bAmps;
- var throttle;
- var Id;
- var Iq;
- var IdRef;
- var IqRef;
+let battTemp;
+let y = [];
+let speed;
+let voltPct;
+let mAmps;
+let bAmps;
+let throttle;
+let Id;
+let Iq;
+let IdRef;
+let IqRef;
 
+let swapTxt = true;
+const socket = io();
 
- swapTxt = true;
- var socket = io();
-
-socket.on('chat message', function (msg){
-  var res = msg.split(",");
+socket.on('chat message', (msg) => {
+  let res = msg.split(',');
 
   txtWhere = swapTxt ? $('#msg1') : $('#msg2');
-  addToTextarea(txtWhere, (msg+"\n"));
+  addToTextarea(txtWhere, (msg + '\n'));
 
-  if(res[0].includes("T")){
-    batt_temp = [];
+  if (res[0].includes('T')) {
+    battTemp = [];
     y[0] = [];
     speed = res[13]; // this is actualy mech.RPM
     voltPct = res[8];
@@ -42,21 +41,18 @@ socket.on('chat message', function (msg){
     // bAmps = res[18];
     // bAmps = res[19];
   }
-  //if (res[0].includes("M")) speed = res[1];
+  // if (res[0].includes("M")) speed = res[1];
 });
 
 
-var addToTextarea = ($ta, text) => {
+const addToTextarea = ($ta, text) => {
   const length = 20;
-  var t = (($ta.val() ? $ta.val() : "") + text).split("\n");
-  t = (t.length > length) ? t.slice(t.length - length) : t
-  $ta.val(t.join("\n")).scrollTop($ta[0].scrollHeight);;
-}
+  let t = (($ta.val() ? $ta.val() : '') + text).split('\n');
+  t = (t.length > length) ? t.slice(t.length - length) : t;
+  $ta.val(t.join('\n')).scrollTop($ta[0].scrollHeight);
+};
 
-
-var swapTextArea = () => {
-  swapTxt = swapTxt ? false : true
-}
+const swapTextArea = () => { swapTxt = !swapTxt;  };
 
 function reload(){
   //battery.series[0].setData(batt_temp);
