@@ -9,8 +9,8 @@ var path = __dirname + '/';
 var io = require('socket.io')(http);
 var router = express.Router();
 var SerialPort = require('serialport'); /*Serial Port Intitiate*/
-var port = new SerialPort("/dev/ttyACM0", { // DELL
-//var port = new SerialPort("/dev/ttyUSB0", {	 // PI3
+//var port = new SerialPort("/dev/ttyACM0", { // DELL
+var port = new SerialPort("/dev/ttyUSB0", {	 // PI3
   baudRate: 115200,
   bufferSize: 1 ,
   rtscts: true ,
@@ -20,7 +20,7 @@ var str = "";
 var count=0;
 var no_pkt = 0;
 var flag_V = 0; /*Validation Flag*/
-
+// test
 /*Socket IO*/
 router.use("/",function(req,res){
   console.log (req.url);
