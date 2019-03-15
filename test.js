@@ -2,6 +2,7 @@
   NODE js library handler to get data from serial ports and push
   them to the websockets and display in GUI
 */
+
 const keypress = require('keypress');
 
 const express = require('express');
@@ -20,6 +21,7 @@ const router = express.Router();
 
 const port = new SerialPort('/dev/ttyACM0', { // DELL
 // let port = new SerialPort("/dev/ttyUSB0", { // PI3
+
   baudRate: 115200,
   bufferSize: 1,
   rtscts: true,
