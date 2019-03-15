@@ -57,7 +57,7 @@ const sendSerial(data) => {
 io.on('CMD', (data) => { console.log(data); });
 
 io.on('connection', (socket) => {
-  console.log('User connected'); // this will print when users are connected
+  console.log('User connected');
 
   socket.on('chat message', (msg) => { console.log(msg); });
 
