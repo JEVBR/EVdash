@@ -19,9 +19,13 @@ const SerialPort = require('serialport');
 
 const router = express.Router();
 
-const port = new SerialPort('/dev/ttyACM0', { // DELL
-// const port = new SerialPort("/dev/ttyUSB0", { // PI3
+const settings = require('./local-settings.json');
+//{
+//  "port": "/dev/ttyACM0",
+//  "device": "DELL"
+//}
 
+const port = new SerialPort(settings.port, {
   baudRate: 115200,
   bufferSize: 1,
   rtscts: true,
@@ -29,18 +33,13 @@ const port = new SerialPort('/dev/ttyACM0', { // DELL
 
 let str = '';
 
-// test
 /* Socket IO */
 router.use('/', (req, res) => { res.sendFile(path + req.url); });
 app.use('/', router);
 app.use(express.static(__dirname + '/public'));
 
 port.on('data', (data) => {
-  // console.log(data);
-  // if(flag_V == 0) validateData(data) ;
-  // else{
   str += data;
-  // console.log(str);
   if (str.includes('!')) {
     port.flush();
     console.log(str);
