@@ -10,18 +10,18 @@ let Iq;
 let IdRef;
 let IqRef;
 
+
 let swapTxt = true;
 const socket = io();
 
 socket.on('chat message', (msg) => {
   let res = msg.split(',');
-
   txtWhere = swapTxt ? $('#msg1') : $('#msg2');
   addToTextarea(txtWhere, (msg + '\n'));
-
   if (res[0].includes('T')) {
     battTemp = [];
     y[0] = [];
+
     speed = res[13]; // this is actualy mech.RPM
     voltPct = res[8];
     mAmps = res[5];
@@ -55,21 +55,21 @@ const addToTextarea = ($ta, text) => {
 const sendCommand = () => {
   const data = document.getElementById('Input');
   socket.emit('CMD', data.value);
-  data.value="";
+  data.value = '';
 };
 
 const swapTextArea = () => { swapTxt = !swapTxt; };
 
-function reload(){
-  //battery.series[0].setData(batt_temp);
-  point = chartRpm.series[0].points[0].update( (parseInt(speed)));
-  point = chartVoltPct.series[0].points[0].update( (parseInt(voltPct)));
-  point = chartMotorAmps.series[0].points[0].update( (parseInt(mAmps))/4);
-  point = chartBatteryAmps.series[0].points[0].update( (parseInt(bAmps))/4);
-  point = chartThrottlePct.series[0].points[0].update( (parseInt(throttle)));
-  point = chartId.series[0].points[0].update( (parseInt(Id)));
-  point = chartIq.series[0].points[0].update( (parseInt(Iq)));
-  point = chartIdRef.series[0].points[0].update( (parseInt(IdRef)));
-  point = chartIqRef.series[0].points[0].update( (parseInt(IqRef)));
-}
+const reload = () => {
+  // battery.series[0].setData(batt_temp);
+  point = chartRpm.series[0].points[0].update((parseInt(speed)));
+  point = chartVoltPct.series[0].points[0].update((parseInt(voltPct)));
+  point = chartMotorAmps.series[0].points[0].update((parseInt(mAmps))/4);
+  point = chartBatteryAmps.series[0].points[0].update((parseInt(bAmps))/4);
+  point = chartThrottlePct.series[0].points[0].update((parseInt(throttle)));
+  point = chartId.series[0].points[0].update((parseInt(Id)));
+  point = chartIq.series[0].points[0].update((parseInt(Iq)));
+  point = chartIdRef.series[0].points[0].update((parseInt(IdRef)));
+  point = chartIqRef.series[0].points[0].update((parseInt(IqRef)));
+};
 setInterval(reload, 1000);
