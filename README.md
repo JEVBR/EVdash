@@ -6,7 +6,7 @@ The car uses a AC inverter based on the project of Paul Holmes.
 
 The inverter sends serial data to a Raspberry PI3 on which this EVdash software is running. The PI3 displays the recieved data on a monitor.
 
-Software uses NODE JS, Socket.io etc to create a localhost On the localhost the data from serial port is made available to a browser (tested on Google Chrome).
+Software uses NODE JS, Socket.io etc to create a localhost. On this localhost the data from serial port is made available to a browser (tested on Google Chrome).
 
 # setup (on Raspberry Pi-3 using Ubuntu)
 
