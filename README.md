@@ -1,5 +1,6 @@
 # EVdash
 
+
 This is the software of a car dashboard i use to monitor currents, voltages, speed, etc. of the frequency inverter of my DIY electric car.
 
 The car uses a AC inverter based on the project of Paul Holmes. 
@@ -8,7 +9,7 @@ The inverter sends serial data to a Raspberry PI3 on which this EVdash software 
 
 Software uses NODE JS, Socket.io etc to create a localhost. On this localhost the data from serial port is made available to a browser (tested on Google Chrome).
 
-# setup (on Raspberry Pi-3 using Ubuntu)
+# setup (on Raspberry Pi-3 using Ubuntu -Mate)
 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
@@ -57,4 +58,21 @@ This file is not included in the git-repo, since it is different depending on wh
 
 go to http://localhost:3000
 
+# Pi3 Startup
+
+To change the USB permissions at startup of the PI3 ad the following line to the SUDO CRONTAB by:
+
+$ sudo crontab -e
+
+add the line:
+
+@reboot chmod 666 /dev/ttyUSB0 && echo "run SUDO crontab" >> /home/jevbr/code/EVdash/startuplog.log 2>&1
+
+And in the pull down menu "System", "Startup Applications" add the folowing items:
+
+chromium-browser --password-store=basic --kiosk  
+ 
+mate-terminal --working-directory=/home/jevbr/code/EVdash -e 'node test.js' 
+
 # JEVBR
+
