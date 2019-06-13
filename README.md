@@ -9,7 +9,7 @@ The inverter sends serial data to a Raspberry PI3 on which this EVdash software 
 
 Software uses NODE JS, Socket.io etc to create a localhost. On this localhost the data from serial port is made available to a browser (tested on Google Chrome).
 
-# setup (on Raspberry Pi-3 using Ubuntu -Mate)
+# Setup (on Raspberry Pi-3 using Ubuntu - Mate)
 
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
