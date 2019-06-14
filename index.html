@@ -20,30 +20,33 @@
   </head>
   <body >
    <!-- Tabs -->
-    <main class= container>
+    <main class= containerH>
 
             <div id="container1" class="outergauge"></div>
             <div id="container2" class="outergauge"></div>
             <div id="container3" class="outergauge"></div>
-            <form id = "form" action = "">
-              <input type="text" id="Input"><br>
-              <div><input type="button" id="sendbutton" onclick="sendCommand()"></div>
-            </form>
+
     </main>
     <main class= container>
             <div id="container4" class="outerbullets"></div>
             <div id="container5" class="outerbullets"></div>
             <div id="container6" class="outerbullets"></div>
-            <div id="container7" class="outerbullets"></div>
     </main>
     <main class= container>
+            <div id="container7" class="outerbullets"></div>
             <div id="container8" class="outerbullets"></div>
             <div id="container9" class="outerbullets"></div>
     </main>
     <main class= container>
-          <div><textarea rows="20"  id="msg1"> </textarea></div>
+		<form id = "form" action = "">
+      	<input type="text" id="Input"><br>
+      	<div><input type="button" id="sendbutton" onclick="sendCommand()"></div>
+      </form>
+	 </main>	
+    <main class= container>
+          <div><textarea rows="10"  id="msg1"> </textarea></div>
           <div><input type="checkbox" id="myCheck" onclick="swapTextArea()"></div>
-          <div><textarea rows="20" id="msg2"> </textarea></div>
+          <div><textarea rows="10" id="msg2"> </textarea></div>
     </main>
 
     <script type="text/javascript">

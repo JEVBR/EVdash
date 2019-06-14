@@ -5,32 +5,34 @@
      }
 
 
-    table {
-      width: 100%;
-    }
-
-    th {
-     height: 200px;
-    }
-
-    .container{
+     .containerH{
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      height: 30vh;
+      height: 200px;
       flex-wrap: wrap;
+      background-color: black;
+    }
+
+     .container{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      height: 100px;
+      flex-wrap: wrap;
+      background-color: black;
     }
 
      #msg1, #msg2{
 
       background-color: black;
       color: green;
-      width: 1000px;
+      width: 460px;
       flex: 1;
     }
 
     #myCheck{
-      width:100px;
+      width:20px;
     }
 
     .outergauge {
@@ -44,9 +46,9 @@
     .outerbullets {
       width: 300px;
       float: center;
-      height: 200px;
+      height: 100px;
       margin: 0 auto;
-      background-color: black;
+      background-color: yellow;
     }
 
 

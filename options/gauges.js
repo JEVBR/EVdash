@@ -1,10 +1,15 @@
+var Joptions = {
+	backgroundColor: '#666'
+};
+
 var gaugeOptions = {
 
     chart: {
         type: 'solidgauge',
         animation: {
             duration: 70
-        }
+        },
+        backgroundColor: '#000'
     },
 
     title: null,
@@ -15,7 +20,7 @@ var gaugeOptions = {
         startAngle: -90,
         endAngle: 90,
         background: {
-            backgroundColor: '#EEE',
+            backgroundColor: '#666',
             innerRadius: '60%',
             outerRadius: '100%',
             shape: 'arc'
@@ -62,7 +67,8 @@ var bulletOptions = {
         type: 'bullet',
         animation: {
             duration: 70
-        }
+        },
+        backgroundColor: '#000'
     },
     title: {
         text: null
