@@ -83,7 +83,7 @@ var bulletOptions = {
         series: {
             pointPadding: 0.25,
             borderWidth: 0,
-            color: '#000',
+            color: '#FFFFFF',
             targetOptions: {
                 width: '200%'
             }
