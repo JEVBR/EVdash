@@ -3,7 +3,7 @@
 
 This is the software of a car dashboard i use to monitor currents, voltages, speed, etc. of the frequency inverter of my DIY electric car.
 
-The car uses a AC inverter based on the project of Paul Holmes. 
+The car uses a AC inverter based on the project of Paul Holmes. Some video of the dash can be found at https://www.youtube.com/watch?v=jg6Px_q51ew 
 
 The inverter sends serial data to a Raspberry PI3 on which this EVdash software is running. The PI3 displays the recieved data on a monitor.
 
