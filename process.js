@@ -46,6 +46,7 @@ socket.on('chat message', (msg) => {
 
 
 const addToTextarea = ($ta, text) => {
+  console.log('add txt to msg area');
   const length = 20;
   let t = (($ta.val() ? $ta.val() : '') + text).split('\n');
   t = (t.length > length) ? t.slice(t.length - length) : t;
@@ -53,6 +54,7 @@ const addToTextarea = ($ta, text) => {
 };
 
 const sendCommand = () => {
+  console.log('Sending Command ... maybe?');
   const data = document.getElementById('Input');
   socket.emit('CMD', data.value);
   const ta = document.getElementById('hasSend');
