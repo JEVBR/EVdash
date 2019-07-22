@@ -74,5 +74,7 @@ chromium-browser --password-store=basic --kiosk
  
 mate-terminal --working-directory=/home/jevbr/code/EVdash -e 'node test.js' 
 
+Also disable "TILDA' in the startup options.
+
 # JEVBR
 
