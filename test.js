@@ -49,8 +49,8 @@ port.on('data', (data) => {
 });
 
 const sendSerial = (data) => {
-  port.write(data);
   console.log(data);
+  port.write(data);
 };
 
 io.on('CMD', (data) => { console.log(data); });
@@ -66,7 +66,7 @@ io.on('connection', (socket) => {
 });
 
 /* Create http server */
-app.get('/', (req, res) => { res.sendFile(__dirname + '/index.html'); });
+//app.get('/', (req, res) => { res.sendFile(__dirname + '/index.html'); });
 
 http.listen(3000, () => {
   console.log('listening on :3000');
