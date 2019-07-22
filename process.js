@@ -55,7 +55,7 @@ const addToTextarea = ($ta, text) => {
 const sendCommand = () => {
   const data = document.getElementById('Input');
   socket.emit('CMD', data.value);
-  const ta = getElementById('hasSend');
+  const ta = document.getElementById('hasSend');
   console.log(data.value);
   ta.val += data.value;
 
