@@ -25,11 +25,11 @@ const settings = require('./local-settings.json');
 //  "device": "DELL"
 //}
 
-// const port = new SerialPort(settings.port, {
-//   baudRate: 115200,
-//   bufferSize: 1,
-//   rtscts: true,
-// });
+const port = new SerialPort(settings.port, {
+  baudRate: 115200,
+  bufferSize: 1,
+  rtscts: true,
+});
 
 let str = '';
 
@@ -38,15 +38,15 @@ router.use('/', (req, res) => { res.sendFile(path + req.url); });
 app.use('/', router);
 app.use(express.static(__dirname + '/public'));
 
-// port.on('data', (data) => {
-//   str += data;
-//   if (str.includes('!')) {
-//     port.flush();
-//     console.log(str);
-//     io.emit('chat message', str); // send msg to web interface.
-//     str = '';
-//   }
-// });
+port.on('data', (data) => {
+  str += data;
+  if (str.includes('!')) {
+    port.flush();
+    console.log(str);
+    io.emit('chat message', str); // send msg to web interface.
+    str = '';
+  }
+});
 
 const sendSerial = (data) => {
   console.log(data);
