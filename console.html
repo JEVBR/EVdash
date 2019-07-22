@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Serial Data Console </title>
+
+    <script src="../offline/socket.io-1.2.0.js"></script>
+
+    <script src="../options/gauges.js"></script>
+
+    <script src="../highcharts-dist-master/highcharts.js"></script>
+    <script src="../highcharts-dist-master/highcharts-more.js"></script>
+    <script src="../highcharts-dist-master/modules/solid-gauge.js"></script>
+    <script src="../highcharts-dist-master/modules/bullet.js"></script>
+    <script src="../offline/jquery.min.js"></script>
+    <script src="../offline/bootstrap.min.js"></script>
+    <script src="../process.js"></script>
+
+    <link rel="stylesheet" href="../app.css">
+
+  </head>
+  <body >
+   <!-- Tabs -->
+
+    <main class= container>
+    <form id = "form" action = "">
+        <input type="text" id="Input"><br>
+        <div>
+          <button class="btn btn-primary" id="sendbutton" type="submit" onclick="sendCommand()">SEND</button>
+
+          <button type="button" onclick="location.href = '../index.html';">Main</button>
+
+        </div>
+      </form>
+   </main>
+    <main class= container>
+          <div><textarea rows="30"  id="msg1"> </textarea></div>
+          <div><input type="checkbox" id="myCheck" onclick="swapTextArea()"></div>
+          <div><textarea rows="30" id="msg2"> </textarea></div>
+    </main>
+  </body>
+</html>
