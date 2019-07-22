@@ -16,7 +16,7 @@ const socket = io();
 
 socket.on('chat message', (msg) => {
   let res = msg.split(',');
-  txtWhere = swapTxt ? $('#msg1') : $('#msg2');
+  const txtWhere = swapTxt ? $('#msg1') : $('#msg2');
   addToTextarea(txtWhere, (msg + '\n'));
   if (res[0].includes('T')) {
     battTemp = [];
@@ -55,6 +55,8 @@ const addToTextarea = ($ta, text) => {
 const sendCommand = () => {
   const data = document.getElementById('Input');
   socket.emit('CMD', data.value);
+  const txtWhere = $('#hasSend');
+  addToTextarea(txtWhere, (data + '\n'));
   data.value = '';
 };
 
