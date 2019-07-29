@@ -26,6 +26,10 @@ npm i espress
 
 npm i serialport@latest
 
+npm i --save-dev nodemon
+
+npm i dotenv
+
 find the serial port:
 
 $ dmesg | grep tty

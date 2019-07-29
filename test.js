@@ -3,6 +3,10 @@
   them to the websockets and display in GUI
 */
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const keypress = require('keypress');
 
 const express = require('express');
