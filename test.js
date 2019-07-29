@@ -65,22 +65,21 @@ io.on('connection', (socket) => {
   socket.on('CMD', (data) => { sendSerial(data); });
 });
 
-/* Create http server */
-//app.get('/', (req, res) => { res.sendFile(__dirname + '/index.html'); });
-
 http.listen(3000, () => {
   console.log('listening on :3000');
   console.log('--------------------Server Started---------------------------');
 });
 
+// This part commented since using nodemon now:
+
 // make `process.stdin` begin emitting "keypress" events
-keypress(process.stdin);
+// keypress(process.stdin);
 
-// listen for the "keypress" event
-process.stdin.on('keypress', (ch, key) => {
-  console.log('got "keypress"', key);
-  io.close(); // Close current server
-  return process.exit('exit');
-});
+// // listen for the "keypress" event
+// process.stdin.on('keypress', (ch, key) => {
+//   console.log('got "keypress"', key);
+//   io.close(); // Close current server
+//   return process.exit('exit');
+// });
 
-process.stdin.setRawMode(true);
+// process.stdin.setRawMode(true);

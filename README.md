@@ -3,11 +3,17 @@
 
 This is the software of a car dashboard i use to monitor currents, voltages, speed, etc. of the frequency inverter of my DIY electric car.
 
-The car uses a AC inverter based on the project of Paul Holmes. Some video of the dash can be found at https://www.youtube.com/watch?v=jg6Px_q51ew 
+The car uses a AC inverter based on the project of Paul Holmes. Some video of the dash can be found at https://www.youtube.com/watch?v=jg6Px_q51ew
 
 The inverter sends serial data to a Raspberry PI3 on which this EVdash software is running. The PI3 displays the recieved data on a monitor.
 
 Software uses NODE JS, Socket.io etc to create a localhost. On this localhost the data from serial port is made available to a browser (tested on Google Chrome).
+
+# Work in progress:
+
+- Setting up individual routes for net pages (Wanting to include a console, BMS and separated (maybe partial) views).
+- add nodemon
+-
 
 # Setup (on Raspberry Pi-3 using Ubuntu - Mate)
 
@@ -18,7 +24,7 @@ npm i socket.io
 
 npm i espress
 
-npm i serialport@latest  
+npm i serialport@latest
 
 find the serial port:
 
@@ -70,9 +76,9 @@ add the line:
 
 And in the pull down menu "System", "Startup Applications" add the folowing items:
 
-chromium-browser --password-store=basic --kiosk  
- 
-mate-terminal --working-directory=/home/jevbr/code/EVdash -e 'node test.js' 
+chromium-browser --password-store=basic --kiosk
+
+mate-terminal --working-directory=/home/jevbr/code/EVdash -e 'node test.js'
 
 Also disable "TILDA' in the startup options.
 

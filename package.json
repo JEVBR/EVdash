@@ -4,18 +4,19 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node test.js",
+    "devStart": "nodemon test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/akilawickey/nodejs-serial-frontend.git"
+    "url": "git+https://github.com/JEVBR/EVdash.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/akilawickey/nodejs-serial-frontend/issues"
+    "url": "https://github.com/JEVBR/EVdash/issues"
   },
-  "homepage": "https://github.com/akilawickey/nodejs-serial-frontend#readme",
+  "homepage": "https://github.com/JEVBR/EVdash#readme",
   "dependencies": {
     "bindings": "^1.5.0",
     "espress": "0.0.0",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "eslint": "^5.15.1",
     "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "nodemon": "^1.19.1"
   }
 }
