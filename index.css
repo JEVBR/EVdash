@@ -1,0 +1,42 @@
+.jevbr_table {
+  font-size: 30;
+  font-weight: bold;
+  padding: 10px;
+  margin: 3px;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+.column {
+  position: relative;
+    float: left;
+    border:1px solid black;
+  }
+  
+.left, .right {
+    width: 24%;
+    height: 100%;
+  }
+  
+.middle {
+    width: 49%;
+    height: 100%;
+  }
+
+.row {
+    height: 900px;    
+}
+
+.bottom {
+    height: 250px;
+}
+
+.percent {
+  position: absolute;
+     left: 50%;
+     transform: translate(-50%, 0);
+     font-size: 80px;
+     bottom: 0;
+ }
