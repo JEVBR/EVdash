@@ -24,7 +24,7 @@
     "express": "^4.16.4",
     "keypress": "^0.2.1",
     "serialport": "^8.0.7",
-    "socket.io": "^1.7.4"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
