@@ -19,4 +19,4 @@ var succaoSettings = {
         rotation: 1 * Math.PI,
         circumference: 1 * Math.PI,
     }
-}
+} 

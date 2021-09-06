@@ -55,8 +55,11 @@ function update_inv_charts() {
     // addData(myLineChart, values.counter, data);
     // // console.log(myLineChart1.data.datasets[0].data)
     // succaoInv = (values.succao *-1)*100
-    myLineChart1.data.datasets[0].data = [values.value_2,100-values.value_2]
-    myLineChart1.update()
+    // myLineChart1.data.datasets[0].data = [values.value_2,100-values.value_2]
+    // myLineChart1.update()
+
+    var update = { value: values.value_2 };
+    Plotly.restyle('myDiv', update, 0);
 
     myLineChart2.data.datasets[0].data = [values.value_3,100-(values.value_3)]
     myLineChart2.update()

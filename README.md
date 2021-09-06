@@ -44,7 +44,11 @@ $ sudo chmod 666 /dev/ttyUSB0
 
 # Start the server
 
-$ node test.js
+$ node app.js
+
+or when Dev'ing:
+
+$ npm run devStart 
 
 in case of an error: cannot open /dev/ttyACM0 or similar, check the serial port and its settings. The port settings are found in the file "local-settings.json"
 
