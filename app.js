@@ -166,7 +166,7 @@ server.on('connection', function(socket) {
   });
 }); 
 
-setTimeout(pinger, 500)
+if (0) {setTimeout(pinger, 500)}
 var pingCount = 0
 function pinger() {
   // console.log("ping")

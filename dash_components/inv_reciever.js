@@ -2,8 +2,8 @@ function filter_inv(msg) {
     split_msg = (msg.split(','))
     if (split_msg[0] === "#T") { 
         values.counter = values.counter + 1 
-        values.Id10 = round(split_msg[1],2)
-        values.Iq10 = round(split_msg[2],2)
+        values.Id10 = signed_int(split_msg[1])  
+        values.Iq10 = signed_int(split_msg[2])  
         values.value_3 = round(split_msg[3],2)
         values.value_4 = round(split_msg[4],2)
         values.value_5 = round(split_msg[5],2)
@@ -21,6 +21,11 @@ function filter_inv(msg) {
         console.log(msg)
     }
 }
+
+function signed_int(x) {
+    return (x > 32767 ? x - 65536 : x - 0 ) // - 0 removes leading zeros
+}
+
 
 function update_inv_texts(){
 
