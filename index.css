@@ -26,7 +26,11 @@ th, td {
   }
 
 .row {
-    height: 900px;    
+    height: 800px;    
+}
+
+.footer {
+  height: 400px;    
 }
 
 .bottom {

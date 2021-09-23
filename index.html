@@ -10,17 +10,15 @@
     <script src="./dash_components/inv_reciever.js"></script> 
     <script src="index.js"></script> 
     <script src="./charts/color_palete.js"></script> 
-    <script src="./charts/recalque.js"></script> 
-    <script src="./charts/linhas.js"></script> 
-    <script src="./charts/succao.js"></script> 
-    <script src="./charts/vazao.js"></script> 
-    <script src="./charts/densidade.js"></script> 
-    <script src="./charts/testchart.js"></script> 
+    <script src="./charts/lines.js"></script> 
+    <script src="./charts/Iq10chart.js"></script> 
+    <script src="./charts/Id10chart.js"></script> 
 
   
     <div class="row">
       <div class="column left">
-        <div id='myDiv'></div>
+        <div id='Id10div'></div>
+        <div id='Iq10div'></div>
       </div>
    
       <div class="column middle">
@@ -28,14 +26,14 @@
           <tr>
             <th>Contagem: </th><th><div id="messages"></div></th>
           </tr>
-          <tr><td><span>Id*10:   </span></td><td><span id="value_1"></span></td></tr>
-          <tr><td><span>Iq*10:   </span></td><td><span id="value_2"></span></td></tr>
+          <tr><td><span>Id*10:   </span></td><td><span id="Id10"></span></td></tr>
+          <tr><td><span>Iq*10:   </span></td><td><span id="Iq10"></span></td></tr>
           <tr><td><span>IdRef*10:</span></td><td><span id="value_3"></span></td></tr>
           <tr><td><span>IqRef*10:</span></td><td><span id="value_4"></span></td></tr>
           <tr><td><span>IBatt*10:</span></td><td><span id="value_5"></span></td></tr>
-          <tr><td><span>Ib*10:   </span></td><td><span id="value_6"></span></td></tr>
-          <tr><td><span>Ia*10:   </span></td><td><span id="value_7"></span></td></tr>
-          <tr><td><span>V%:         </span></td><td><span id="value_8"></span></td></tr>
+          <tr><td><span>Ib*10:   </span></td><td><span id="Ia10"></span></td></tr>
+          <tr><td><span>Ia*10:   </span></td><td><span id="Ib10"></span></td></tr>
+          <tr><td><span>V%:         </span></td><td><span id="Vpct"></span></td></tr>
           <tr><td><span>Rthr:       </span></td><td><span id="value_9"></span></td></tr>
           <tr><td><span>Thr:        </span></td><td><span id="value_10"></span></td></tr>
           <tr><td><span>Slip:       </span></td><td><span id="value_11"></span></td></tr>
@@ -48,8 +46,12 @@
       </div>
 
       <div class="column right">
-        <canvas id="Recalque" style="width:100%;height:100%;"></canvas>
-        <p id = "mid_Recalque" class="percent">89%</p>
+        col R
+      </div>
+    </div>
+    <div class="footer">
+      <div class="column middle">
+        <canvas id="myChart" style="width:100%;height:100%;"></canvas>
       </div>
     </div>
   </body>

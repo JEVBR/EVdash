@@ -52,22 +52,10 @@ function addData(chart, label, data) {
 var myLineChart
 Chart.defaults.global.defaultFontSize = 30;
 function chartFunction(){ 
-    // var ctx = document.getElementById('myChart');
-    // myLineChart = new Chart(ctx, linhasSettings);
-
-    // var ctx1 = document.getElementById('Succao');
-    // myLineChart1 = new Chart(ctx1, succaoSettings);
-
-    Plotly.newPlot('myDiv', testChartData, testChartLayout);
-
-    var ctx2 = document.getElementById('Recalque');
-    myLineChart2 = new Chart(ctx2, recalqueSettings);
-
-    // var ctx3 = document.getElementById('Vazao');
-    // myLineChart3 = new Chart(ctx3, vazaoSettings);
-
-    // var ctx4 = document.getElementById('Densidade');
-    // myLineChart4 = new Chart(ctx4, densidadeSettings);
+    var ctx = document.getElementById('myChart');
+    myLineChart = new Chart(ctx, linesSettings);
+    Plotly.newPlot('Id10div', Id10ChartData, Id10ChartLayout);
+    Plotly.newPlot('Iq10div', Iq10ChartData, Iq10ChartLayout);
 }
 
 function pageReload(){

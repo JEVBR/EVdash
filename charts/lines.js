@@ -1,4 +1,4 @@
-var linhasSettings = 
+var linesSettings = 
 {
     type: 'line',
     data: {
@@ -6,27 +6,27 @@ var linhasSettings =
         datasets: [
             {
                 data: [],
-                label: 'Sucção',
+                label: 'Id x 10',
                 backgroundColor: color_1 + "00",
                 borderColor:  color_1,
             },
             {
                 data: [],
-                label: 'Recalque',
+                label: 'Iq x 10',
                 backgroundColor: color_4 + "00",
                 borderColor:  color_2,
             },
             {
                 data: [],
-                label: 'Vazao',
+                label: 'Ia',
                 backgroundColor: color_4 + "88",
                 borderColor:  color_3,
             },
             {
                 data: [],
-                label: 'Densidade',
-                backgroundColor: color_4 + "88",
-                borderColor:  color_4,
+                label: 'Ib',
+                backgroundColor: color_1 + "88",
+                borderColor:  color_5,
             }
         ],
 
@@ -40,7 +40,7 @@ var linhasSettings =
                 ticks: {
                     beginAtZero: true
                 }
-            }]
+            }] 
         }
     }
 }

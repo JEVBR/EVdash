@@ -1,8 +1,8 @@
-var testChartData = [
+var Id10ChartData = [
     {
       domain: { x: [0, 1], y: [0, 1] },
       value: 450,
-      title: { text: "Speed" },
+      title: { text: "Id (x 10)" },
       type: "indicator",
       mode: "gauge+number",
       delta: { reference: 400 },
@@ -10,4 +10,4 @@ var testChartData = [
     }
   ];
 
-  var testChartLayout = { width: 600, height: 400 };
+  var Id10ChartLayout = { width: 600, height: 400 };

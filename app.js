@@ -170,11 +170,27 @@ setTimeout(pinger, 500)
 var pingCount = 0
 function pinger() {
   // console.log("ping")
-  str = `#T,${Math.random() * 100},${Math.random() * 100},${Math.random() * 100},${Math.random() * 100},12345,00000,00000,100 ,00005,295,0000,00000,00000,00000,!`
+  str = `#T,${
+    Math.random() * 100},
+    ${Math.random() * 100},
+    ${Math.random() * 100},
+    ${Math.random() * 100},
+    12345,
+    ${Math.random() * 100},
+    ${Math.random() * 100},
+    100,
+    00005,
+    295,
+    0000,
+    00000,
+    00000,
+    00000,
+    !`
   sockets.forEach((socket) => {
     socket.send(str)	
   })
-	setTimeout(pinger, 500)
+	setTimeout(pinger,
+     500)
 }
 
 http.listen(3000, () => {
