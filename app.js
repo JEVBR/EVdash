@@ -40,10 +40,12 @@ router.use('/', (req, res) => { res.sendFile(path + req.url); });
 app.use('/', router);
 app.use(express.static(__dirname + '/public'));
 
+var slow = 0
 port.on('data', (data) => {
   str += data;
   if (str.includes('!')) {
-    port.flush();
+   port.flush();
+   console.clear()
    console.log(str);
     str = str.replace(/\n/g, "");
     str = str.replace(/\r/g, "");
@@ -54,10 +56,13 @@ port.on('data', (data) => {
     } else {
       process.stdout.write(`${str}${'\033[0G'}`);
     }
-    sockets.forEach((socket) => {
-      socket.send(str)	
-    })
-    // io.emit('chat message', str); // send msg to web interface. -> will go to Useeffect in app!
+    slow +=1
+    if (slow >= 5) { 
+      sockets.forEach((socket) => { socket.send(str) })
+      slow = 0
+      console.log("xxxxxx")
+    }
+      // io.emit('chat message', str); // send msg to web interface. -> will go to Useeffect in app!
     str = '';
   }
 });

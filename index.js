@@ -7,7 +7,7 @@ ws.onopen = function() {
 ws.onmessage = function(msg) { display(msg) }
 
 function display(msg){
-
+    // console.clear()
     filter_inv(msg.data)
     update_inv_charts()
     update_inv_texts() 

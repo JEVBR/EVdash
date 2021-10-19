@@ -1,22 +1,25 @@
 function filter_inv(msg) {
     split_msg = (msg.split(','))
-    if (split_msg[0] === "#T") { 
+    if (split_msg[0] === "#T") {
+        
+        
+
         values.counter = values.counter + 1 
         values.Id10 = signed_int(split_msg[1])  
         values.Iq10 = signed_int(split_msg[2])  
-        values.value_3 = round(split_msg[3],2)
-        values.value_4 = round(split_msg[4],2)
-        values.value_5 = round(split_msg[5],2)
-        values.Ia10 = round(split_msg[6],2)
-        values.Ib10 = round(split_msg[7],2)
-        values.Vpct=  round(split_msg[8],2)
-        values.value_9 = round(split_msg[9],2)
-        values.value_10 = round(split_msg[10],2)
-        values.value_11 = round(split_msg[11],2)
-        values.value_12 = round(split_msg[12],2)
-        values.value_13 = round(split_msg[13],2)
-        values.value_14 = round(split_msg[14],2)
-        console.log(values)
+        values.IdRef = signed_int(split_msg[3])
+        values.IqRef = signed_int(split_msg[4])
+        values.IBat = signed_int(split_msg[5])
+        values.Ia10 = signed_int(split_msg[6])
+        values.Ib10 = signed_int(split_msg[7])
+        values.Vpct=  signed_int(split_msg[8])
+        values.Rth = signed_int(split_msg[9])
+        values.Th = signed_int(split_msg[10])
+        values.Slip = signed_int(split_msg[11])
+        values.ERpm = signed_int(split_msg[12])
+        values.MRpm = signed_int(split_msg[13])
+        values.PosCnt = signed_int(split_msg[14])
+        // console.log(values)
     } else {
         console.log(msg)
     }
@@ -33,18 +36,18 @@ function update_inv_texts(){
 
     document.querySelector('#Id10').innerHTML = `<span>${values.Id10}</span>`;
     document.querySelector('#Iq10').innerHTML = `<span>${values.Iq10}</span>`;
-    document.querySelector('#value_3').innerHTML = `<span>${values.value_3}</span>`;
-    document.querySelector('#value_4').innerHTML = `<span>${values.value_4}</span>`;
-    document.querySelector('#value_5').innerHTML = `<span>${values.value_5}</span>`;
+    document.querySelector('#IdRef').innerHTML = `<span>${values.IdRef}</span>`;
+    document.querySelector('#IqRef').innerHTML = `<span>${values.IqRef}</span>`;
+    document.querySelector('#IBat').innerHTML = `<span>${values.IBat}</span>`;
     document.querySelector('#Ia10').innerHTML = `<span>${values.Ia10}</span>`;
     document.querySelector('#Ib10').innerHTML = `<span>${values.Ib10}</span>`;
     document.querySelector('#Vpct').innerHTML = `<span>${values.Vpct}</span>`;
-    document.querySelector('#value_9').innerHTML = `<span>${values.value_9}</span>`;
-    document.querySelector('#value_10').innerHTML = `<span>${values.value_10}</span>`;
-    document.querySelector('#value_11').innerHTML = `<span>${values.value_11}</span>`;
-    document.querySelector('#value_12').innerHTML = `<span>${values.value_12}</span>`;
-    document.querySelector('#value_13').innerHTML = `<span>${values.value_13}</span>`;
-    document.querySelector('#value_14').innerHTML = `<span>${values.value_14}</span>`;
+    document.querySelector('#Rth').innerHTML = `<span>${values.Rth}</span>`;
+    document.querySelector('#Th').innerHTML = `<span>${values.Th}</span>`;
+    document.querySelector('#Slip').innerHTML = `<span>${values.Slip}</span>`;
+    document.querySelector('#ERpm').innerHTML = `<span>${values.ERpm}</span>`;
+    document.querySelector('#MRpm').innerHTML = `<span>${values.MRpm}</span>`;
+    document.querySelector('#PosCnt').innerHTML = `<span>${values.PosCnt}</span>`;
     
 }
 
